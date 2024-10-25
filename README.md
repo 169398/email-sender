@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Email Sending App with Next.js 15
+
+This application allows you to send personalized emails to multiple recipients in batches, using Next.js 15 App Router, TypeScript, and Nodemailer. Each recipient receives a customized greeting, while the email body remains the same for all.
+
+## Features
+
+- Bulk email sending with personalized greetings.
+- Throttling emails to avoid SMTP limits (20 emails per minute).
+- Configured to work with Outlook SMTP, requiring app passwords or Microsoft Graph if additional permissions are required.
+
+## Prerequisites
+
+- **Node.js** (v16+)
+- **Next.js 15 or any **
+- **TypeScript**
+- **G-mail account** with app password enabled or SMTP access configured (see configuration below).
+- **Outlook account** with app password enabled or SMTP access configured (see configuration below).
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/your-repo.git
+```
+cd your-repo
+2. Install Dependencies
+bash
+Copy code
+npm install
+3. Configure Environment Variables
+Create a .env.local file in the root of your project with the following variables:
+
+plaintext
+```bash
+EMAILtestidris@gmail.com
+EMAIL_PASSWORD=your_outlook_app_password_or_smtp_password
+```
+Note: For an Outlook email, use either the app password (if MFA is enabled) or SMTP credentials. Refer to the Microsoft SMTP Configuration Guide if you encounter authentication errors.
+
+4. Run the Application
+To run the app in development mode, use:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+The application should now be accessible at http://localhost:3000.
+```
+## Usage
+
+To send a batch of emails:
+
+- Send a `POST` request to the `/api/sendEmails` endpoint with the following payload:
+- Don't worry; you will have a user interface to send the emails.
+
+```json
+{
+  "recipients": [
+    { "name": "John Doe", "email": "john.doe@example.com" },
+    { "name": "Jane Smith", "email": "jane.smith@example.com" }
+  ],
+  "subject": "Your Subject Here",
+  "text": "Your email body content here"
+}
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
