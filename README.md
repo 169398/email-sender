@@ -1,4 +1,4 @@
-# Email Sending App with Next.js 15
+# Bulk Email more than 1 Sending App with Next.js 15
 
 This application allows you to send personalized emails to multiple recipients in batches, using Next.js 15 App Router, TypeScript, and Nodemailer. Each recipient receives a customized greeting, while the email body remains the same for all.
 
