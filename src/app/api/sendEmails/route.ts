@@ -17,13 +17,15 @@ export async function POST(req: Request) {
   }: { recipients: Recipient[]; subject: string; text: string } =
     await req.json();
 
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.EMAIL,
-      pass: process.env.EMAIL_PASSWORD,
-    },
-  });
+ const transporter = nodemailer.createTransport({
+   host: "smtp.gmail.com",
+   port: 587,
+   secure: false, 
+   auth: {
+     user: process.env.EMAIL,
+     pass: process.env.EMAIL_PASSWORD,
+   },
+ });
 
   try {
     // Loop through recipients and send emails with throttling
