@@ -21,7 +21,7 @@ This application allows you to send personalized emails to multiple recipients i
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/your-repo.git
+git clone https://github.com/169398/email-sender
 ```
 cd your-repo
 2. Install Dependencies
