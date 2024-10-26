@@ -1,4 +1,4 @@
-# Want to send 100 emails at once  with Next.js 15 
+# Want to send 100 emails or at once  for free with Next.js 15 
 
 This application allows you to send personalized emails to multiple recipients in batches, using Next.js 15 App Router, TypeScript, and Nodemailer. Each recipient receives a customized greeting, while the email body remains the same for all.
 
