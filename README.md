@@ -1,10 +1,12 @@
-# Bulk Email Sender with Next.js 15
+# Bulk Email Sender with Next.js 15👌💯
 
 This application allows you to send personalized emails to multiple recipients in batches, using Next.js 15 App Router, TypeScript, and Nodemailer. Each recipient receives a customized greeting, while the email body remains the same for all.
 
 ## Features
 
 - Bulk email sending with personalized greetings
+- Added markdown to format your emails to be cool.
+- Added Images support to attach Images to your emails.
 - Throttling to avoid SMTP limits (20 emails per minute)
 - Supports Gmail SMTP configuration
 - User-friendly interface for sending emails
@@ -77,6 +79,13 @@ The application should now be accessible at http://localhost:3000.
 ## Troubleshooting
 
 If you encounter any issues with authentication or sending emails, double-check your Gmail app password and ensure it's correctly set in the `.env.local` file.
+
+## TO DO'S
+- Enable document files attachement feature
+- Any other idea to improve that i will have 👌😊
+
+
+
 
 ## Contributing
 
